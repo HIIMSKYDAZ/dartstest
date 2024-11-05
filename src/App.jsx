@@ -19,7 +19,7 @@ export const App =()=> {
               </li>
               <li className="nav-item">
               <NavLink to={'/uj-chess'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
-                <span className="nav-link">Új sakkozó</span>
+                <span className="nav-link">Új sakkozó felvitele</span>
               </NavLink>
               </li>
           </ul>
