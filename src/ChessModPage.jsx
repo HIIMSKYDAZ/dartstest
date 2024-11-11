@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export function ChessModPage(props) {
+export const ChessModPage =()=> {
     const params = useParams();
     const id = params.chessId;
     const navigate = useNavigate();
@@ -85,5 +85,4 @@ export function ChessModPage(props) {
             </form>
         </div>
     );
-    }
-export default ChessModPage;
+};
