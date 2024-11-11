@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
 
-export function ChessDelPage(props) {
+export const ChessDelPage=()=> {
     const params = useParams();
     const id = params.chessId;
     const navigate = useNavigate();
@@ -31,8 +31,10 @@ export function ChessDelPage(props) {
         ) : (
                         <div className="card p-3">
                             <div className="card-body">
-                            <h5 className="card-title">Törlendő elem neve: {chess.name}</h5>
-                            <div className="lead">Születési idő: {chess.birth_date}</div>
+                            <h5 className="card-title">Törlendő elem: {chess.name}</h5>
+                            <div className="lead">Születési éve: {chess.birth_date}</div>
+                            <div className="lead">Nyert világbajnokságok: {chess.world_ch_won}</div>
+                            <div className="lead">Profil: {chess.profile_url}</div>
                                 <img alt={chess.name}
                                 className="img-fluid rounded"
                                 style={{maxHeight: "500px"}}
@@ -41,15 +43,11 @@ export function ChessDelPage(props) {
                                 />
                               </div>
                               <form onSubmit={(event) => {
-                
             event.persist();
             event.preventDefault();
             fetch(`https://chess.sulla.hu/chess/${id}`, {
                 method: "DELETE",
-                
-                
             })
-        
             .then(() =>
             {
                 navigate("/");
@@ -65,5 +63,4 @@ export function ChessDelPage(props) {
                 )}
             </div>
         );
-}
-    export default ChessDelPage;
+};
