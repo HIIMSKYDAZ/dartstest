@@ -12,12 +12,7 @@ export const DartsDelPage=()=> {
         setPending(true);
         (async () => {
             try {
-        const res= await fetch(`https://darts.sulla.hu/darts/${id}`, {
-            method: 'DELETE'
-        })
-        if (res.status === 500) {
-            console.log('Error deleting chess data:', res.statusText);
-        }
+        const res= await fetch(`https://darts.sulla.hu/darts/${id}`)
             const chess = await res.json();
             setChess(chess);
         }
@@ -51,24 +46,16 @@ export const DartsDelPage=()=> {
                               <form onSubmit={(event) => {
             event.persist();
             event.preventDefault();
-            fetch(`https://darts.sulla.hu/darts/${id}`, {
-                method: 'DELETE'
-            })
-            .then((res) => {
-                if (res.status === 500) {
-                    console.log('Error deleting chess data:', res.statusText);
-                }
-                navigate("/");
-            });
+            axios.delete(`https://darts.sulla.hu/darts/${id}`)
+            .then(() => navigate("/"));
             }}>
                               <div>
-<NavLink to={"/"}><button className="bi bi-backspace">&nbsp;Mégsem</button></NavLink>
+<NavLink to={"/"}><button className="btn btn-warning" style={{fontStyle: "italic"}}><i class="bi bi-text-paragraph"></i>&nbsp;Vissza</button></NavLink>
 &nbsp;&nbsp;
-<button type='submit' className="bi bi-trash3">&nbsp;Törlés</button></div></form>   
+<button type='submit' className="btn btn-danger"><i class="bi bi-trash3"></i>&nbsp;Törlés</button></div></form>   
                         </div>
                     
                 )}
             </div>
         );
 };
-

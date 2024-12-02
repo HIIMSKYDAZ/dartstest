@@ -32,7 +32,7 @@ export const DartsListPage=()=> {
                             <div className="card-body">
 {/* Feltételes NavLink az abszolút URL-hez */}
 {darts.profile_url.startsWith('http') ? (
-                                    <a href={darts.profile_url} target="_blank" rel="noopener noreferrer">
+                                    <a href={darts.profile_url} target="_blank" rel="noopener noreferrer" className="btn btn-success">
                                         Profile link
                                     </a>
                                 ) : (
@@ -41,6 +41,7 @@ export const DartsListPage=()=> {
                                     </NavLink>
                                 )}
                                 <br />
+                                <br />
                                 <NavLink key={darts.id} to={"/darts/" + darts.id}>
                                     <img alt={darts.nev}
                                         className="img-fluid"
@@ -48,10 +49,10 @@ export const DartsListPage=()=> {
                                         src={darts.image_url ? darts.image_url :
                                             "https://via.placeholder.com/400x800"} /></NavLink>
                                 <br />
-                                <NavLink key="x" to={"/mod-darts/" + darts.id}>
-                                    <i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
-                                    <NavLink key="y" to={"/del-darts/" + darts.id}><i className="bi bi-trash3"></i></NavLink> &nbsp;&nbsp;
-                                    <NavLink key="y" to={"/darts/" + darts.id}><i class="bi bi-info-circle"></i></NavLink>
+                                <br />
+                                <NavLink key="y" to={"/darts/" + darts.id} className={"btn btn-primary"}><i class="bi bi-info-circle"></i></NavLink>&nbsp;&nbsp;
+                                  <NavLink key="x" to={"/mod-darts/" + darts.id} className={"btn btn-warning"}><i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
+                                  <NavLink key="y" to={"/del-darts/" + darts.id} className={"btn btn-danger"}><i className="bi bi-trash3"></i></NavLink>
                                     
                             </div>
                         </div>

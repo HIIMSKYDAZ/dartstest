@@ -29,17 +29,20 @@ export function DartsSinglePage() {
                                 <div className="card-body">
                                 <h5 className="card-title">Dartsozó neve: {darts.name}</h5>
                                 <div className="lead">Születési dátuma: {darts.birth_date}</div>
-                                <div className="lead">Nyert világbajnokságok: {darts.world_ch_won}</div>
+                                <div className="lead">Nyert világbajnokságok: {darts.world_ch_won}</div> <br />
+                                <div><NavLink to={darts.profile_url}  target="_blank" className={"btn btn-success"}>Profile link</NavLink></div><br/>
                                     <img alt={darts.name}
                                     className="img-fluid rounded"
-                                    style={{maxHeight: "500px"}}
+                                    style={{maxHeight: "300px"}}
                                     src={darts.image_url ? darts.image_url : 
                                     "https://via.placeholder.com/400x800"} 
                                     />
                                   </div>
-                                  <div><NavLink to={darts.profile_url}  target="_blank">{darts.profile_url}</NavLink></div><br/>
-                                  <div><NavLink to="/"><i className="bi bi-backspace"></i></NavLink> &nbsp;&nbsp;&nbsp;
-<NavLink key="y" to={"/mod-chess/" + darts.id}><i className="bi bi-pencil"></i></NavLink></div>   
+                                  
+                                  <div>
+                                  <NavLink key="y" to={"/darts/" + darts.id} className={"btn btn-primary"}><i class="bi bi-info-circle"></i></NavLink>&nbsp;&nbsp;
+                                  <NavLink key="x" to={"/mod-darts/" + darts.id} className={"btn btn-warning"}><i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
+                                  <NavLink key="y" to={"/del-darts/" + darts.id} className={"btn btn-danger"}><i className="bi bi-trash3"></i></NavLink></div>   
                             </div>
                         
                     )}
