@@ -46,12 +46,11 @@ export const DartsDelPage=()=> {
                               <form onSubmit={(event) => {
             event.persist();
             event.preventDefault();
-            axios.delete(`https://darts.sulla.hu/darts/${id}`)
-            .then(() =>
-            {
+            fetch(`https://darts.sulla.hu/darts/${id}`, {
+                method: "DELETE",
+            }).then(() => {
                 navigate("/");
             })
-            .catch(console.log);
             }}>
                               <div>
 <NavLink to={"/"}><button className="bi bi-backspace">&nbsp;Mégsem</button></NavLink>
