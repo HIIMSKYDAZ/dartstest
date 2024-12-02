@@ -47,6 +47,10 @@ export const DartsDelPage=()=> {
             event.preventDefault();
             fetch(`https://darts.sulla.hu/darts/${id}`, {
                 method: "DELETE",
+                
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             })
             .then(() =>
             {
