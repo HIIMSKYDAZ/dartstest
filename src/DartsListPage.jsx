@@ -10,7 +10,7 @@ export const DartsListPage=()=> {
         setFetchPending(true);
         fetch("https://darts.sulla.hu/darts")
             .then((res) => res.json())
-            .then((darts) => setDarts(darts))
+            .then((data) => setDarts(data))
             .catch(console.log)
             .finally(() => {
                 setFetchPending(false);
