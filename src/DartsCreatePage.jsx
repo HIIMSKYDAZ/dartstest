@@ -42,7 +42,7 @@ export const DartsCreatePage=()=>{
             <div className="form-group row pb-3">
                 <label className="col-sm-3 col-form-label">Születési éve:</label>
                 <div className="col-sm-9">
-                <input type="number" name="birth_date" className="form-control" />
+                <input type="date" name="birth_date" className="form-control" />
                 </div>
             </div>
             <div className="form-group row pb-3">

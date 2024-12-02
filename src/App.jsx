@@ -3,6 +3,7 @@ import {DartsListPage} from "./DartsListPage";
 import { DartsCreatePage } from "./DartsCreatePage";
 import { DartsModPage } from "./DartsModPage";
 import { DartsDelPage } from "./DartsDelPage";
+import { DartsSinglePage } from "./DartsSinglePage";
 import './App.css';
 
 export const App =()=> {
@@ -29,6 +30,7 @@ export const App =()=> {
         <Route path="/uj-darts" exact element={<DartsCreatePage />} />
         <Route path="/mod-darts/:dartsId" exact element={<DartsModPage />} />
         <Route path="/del-darts/:dartsId" exact element={<DartsDelPage />} />
+        <Route path="/darts/:dartsId" exact element={<DartsSinglePage />} />
       </Routes>
     </Router>
   );
