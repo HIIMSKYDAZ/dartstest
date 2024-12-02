@@ -40,7 +40,7 @@ export function DartsSinglePage() {
                                   </div>
                                   
                                   <div>
-                                  <NavLink key="y" to={"/darts/" + darts.id} className={"btn btn-primary"}><i class="bi bi-info-circle"></i></NavLink>&nbsp;&nbsp;
+                                  <NavLink key="y" to={"/"} className={"btn btn-primary"}><i class="bi bi-text-paragraph"></i></NavLink>&nbsp;&nbsp;
                                   <NavLink key="x" to={"/mod-darts/" + darts.id} className={"btn btn-warning"}><i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
                                   <NavLink key="y" to={"/del-darts/" + darts.id} className={"btn btn-danger"}><i className="bi bi-trash3"></i></NavLink></div>   
                             </div>
