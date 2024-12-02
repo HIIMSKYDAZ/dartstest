@@ -57,7 +57,7 @@ export const DartsDelPage=()=> {
                               <div>
 <NavLink to={"/"}><button className="bi bi-backspace">&nbsp;Mégsem</button></NavLink>
 &nbsp;&nbsp;
-<button className="bi bi-trash3">&nbsp;Törlés</button></div></form>   
+<button type='submit' className="bi bi-trash3">&nbsp;Törlés</button></div></form>   
                         </div>
                     
                 )}
