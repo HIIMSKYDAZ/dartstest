@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 export const DartsDelPage=()=> {
     const params = useParams();
@@ -45,13 +46,7 @@ export const DartsDelPage=()=> {
                               <form onSubmit={(event) => {
             event.persist();
             event.preventDefault();
-            fetch(`https://darts.sulla.hu/darts/${id}`, {
-                method: "DELETE",
-                
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
+            axios.delete(`https://darts.sulla.hu/darts/${id}`)
             .then(() =>
             {
                 navigate("/");
