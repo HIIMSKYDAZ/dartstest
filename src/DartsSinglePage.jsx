@@ -9,7 +9,7 @@ export function DartsSinglePage() {
     const[isPending, setPending] = useState(false);
     useEffect(() => {
         setPending(true);
-                axios.get(`https://chess.sulla.hu/darts/${id}`)
+                axios.get(`https://darts.sulla.hu/darts${id}`)
                 .then((res) => res.data)
                 .then((data) => setDarts(data))
                 .catch(console.log)
