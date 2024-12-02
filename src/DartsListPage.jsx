@@ -10,7 +10,7 @@ export const DartsListPage=()=> {
         setFetchPending(true);
         fetch("https://darts.sulla.hu/darts")
             .then((res) => res.json())
-            .then((darts) => setChess(darts))
+            .then((darts) => setDarts(darts))
             .catch(console.log)
             .finally(() => {
                 setFetchPending(false);
@@ -36,7 +36,7 @@ export const DartsListPage=()=> {
                                         Profile link
                                     </a>
                                 ) : (
-                                    <NavLink to={chess.profile_url} exact>
+                                    <NavLink to={darts.profile_url} exact>
                                         Profile link
                                     </NavLink>
                                 )}
