@@ -27,9 +27,7 @@ export const App =()=> {
       <Routes>
         <Route path="/" exact element={<DartsListPage />} />
         <Route path="/uj-darts" exact element={<DartsCreatePage />} />
-        <Route path="/mod-chess/:chessId" exact element={<ChessModPage />} />
         <Route path="/mod-darts/:dartsId" exact element={<DartsModPage />} />
-        <Route path="/del-chess/:chessId" exact element={<ChessDelPage />} />
         <Route path="/del-darts/:dartsId" exact element={<DartsDelPage />} />
       </Routes>
     </Router>
