@@ -12,7 +12,12 @@ export const DartsDelPage=()=> {
         setPending(true);
         (async () => {
             try {
-        const res= await fetch(`https://darts.sulla.hu/darts/${id}`)
+        const res= await fetch(`https://darts.sulla.hu/darts/${id}`, {
+            method: 'DELETE'
+        })
+        if (res.status === 500) {
+            console.log('Error deleting chess data:', res.statusText);
+        }
             const chess = await res.json();
             setChess(chess);
         }
@@ -47,10 +52,14 @@ export const DartsDelPage=()=> {
             event.persist();
             event.preventDefault();
             fetch(`https://darts.sulla.hu/darts/${id}`, {
-                method: "DELETE",
-            }).then(() => {
-                navigate("/");
+                method: 'DELETE'
             })
+            .then((res) => {
+                if (res.status === 500) {
+                    console.log('Error deleting chess data:', res.statusText);
+                }
+                navigate("/");
+            });
             }}>
                               <div>
 <NavLink to={"/"}><button className="bi bi-backspace">&nbsp;Mégsem</button></NavLink>
@@ -62,3 +71,4 @@ export const DartsDelPage=()=> {
             </div>
         );
 };
+

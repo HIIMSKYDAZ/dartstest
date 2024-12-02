@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const DartsListPage=()=> {
 
-    const[dartses,setDarts] = useState([]);
+    const[darts,setDarts] = useState([]);
     const[isFetchPending, setFetchPending] = useState(false);
     
     useEffect(() => {
@@ -23,7 +23,7 @@ export const DartsListPage=()=> {
             ) : (
                 <div>
                     <h2>Dartsozók</h2>
-                    {dartses.map((darts, index) => (
+                    {darts.map((darts, index) => (
 
                         <div className="card col-sm-3 d-inline-block m-1 p-2" key={index}>
                             <p className="text-dark">Dartsozó neve: {darts.name}</p>
@@ -50,7 +50,9 @@ export const DartsListPage=()=> {
                                 <br />
                                 <NavLink key="x" to={"/mod-darts/" + darts.id}>
                                     <i className="bi bi-pencil"></i></NavLink> &nbsp;&nbsp;
-                                    <NavLink key="y" to={"/del-darts/" + darts.id}><i className="bi bi-trash3"></i></NavLink>
+                                    <NavLink key="y" to={"/del-darts/" + darts.id}><i className="bi bi-trash3"></i></NavLink> &nbsp;&nbsp;
+                                    <NavLink key="y" to={"/darts/" + darts.id}><i class="bi bi-info-circle"></i></NavLink>
+                                    
                             </div>
                         </div>
 
